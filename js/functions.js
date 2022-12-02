@@ -97,6 +97,7 @@ const addArticulo = () => {
   };
 
   db.put(articulo).then(console.log("Insertado")).catch(console.log);
+  showArticulos();
 };
 
 postBtn2.addEventListener("click", () => {
@@ -105,10 +106,9 @@ postBtn2.addEventListener("click", () => {
   form.classList.remove("hidden");
 });
 
-postBtnForm.addEventListener("click", () => {
+postBtnForm.addEventListener("click", (e) => {
+  e.preventDefault();
   addArticulo();
-  postBtn2.classList.remove("hidden");
-  form.classList.add("hidden");
 });
 
 photoBtn.addEventListener("click", (e) => {
@@ -176,8 +176,17 @@ const verArticulo = (id) => {
 };
 
 const showArticulos = () => {
+  nombre.value = "";
+  precio.value = "";
+  descripcion.value = "";
+
+  camaraContenedor.classList.add("hidden");
+  photoBtn.classList.remove("hidden");
   postBtn2.classList.remove("hidden");
+  form.classList.add("hidden");
+  articulosDiv.classList.remove("hidden");
   articulosDiv.innerHTML = "";
+
   db.allDocs({ include_docs: true, descending: false }).then((doc) => {
     doc.rows.map((elm) => {
       articulosDiv.innerHTML += `<div class="mx-auto mt-3 text-center">
