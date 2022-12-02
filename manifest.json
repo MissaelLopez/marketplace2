@@ -1,0 +1,16 @@
+{
+    "short_name": "Marketplace",
+    "name": "Marketplace",
+    "start_url": "index.html",
+    "background_color": "#f87171",
+    "theme_color": "#f87171",
+    "display": "standalone",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "img/icons/icon.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        }
+      ]
+}

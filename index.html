@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Marketplace</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand:300,400"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="js/libs/plugins/mdtoast.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#f87171" />
+
+    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Titulo -->
+    <span class="first bg-red-400">
+      <span
+        id="salir-btn"
+        class="fa fa-sign-out-alt out oculto animated fadeIn"
+      ></span>
+
+      <a href="/" id="titulo">
+        <i class="fa fa-store"></i>
+        MARKETPLACE
+      </a>
+      <span
+        id="nuevo-btn"
+        class="fa fa-pen-square new oculto animated fadeIn fast"
+      ></span>
+    </span>
+    <!-- Fin Titulo -->
+
+    <!-- Articulos -->
+    <div class="seleccion animated fadeIn fast" align="center">
+      <div>
+        <button id="postBtn" class="bg-red-400 text-white p-2 rounded-lg">
+          Postear Articulo
+        </button>
+
+        <div id="form" class="hidden">
+          <form action="">
+            <input
+              required
+              id="nombreInput"
+              type="text"
+              placeholder="Nombre del producto"
+              class="py-1 px-2"
+            />
+            <br />
+            <br />
+            <input
+              required
+              id="precioInput"
+              type="number"
+              placeholder="Precio del producto"
+              class="py-1 px-2"
+            />
+            <br />
+            <br />
+            <input
+              required
+              id="descripcionInput"
+              type="text"
+              placeholder="Descripcion del producto"
+              class="py-1 px-2"
+            />
+            <br />
+            <br />
+
+            <div id="camara-contenedor" class="hidden" align="center">
+              <video id="player" autoplay style="height: 300px"></video>
+
+              <button id="tomar-foto-btn">
+                <i class="fa fa-camera"></i>
+                Tomar Foto
+              </button>
+            </div>
+
+            <div id="photo-btn" class="mx-auto flex mb-5">
+              <i
+                class="mx-auto fa fa-camera text-white bg-red-400 p-3 rounded-full text-2xl"
+              ></i>
+            </div>
+
+            <br />
+            <br />
+
+            <input
+              id="postBtnForm"
+              type="submit"
+              value="Postear"
+              class="bg-red-400 text-white p-2 rounded-lg"
+            />
+          </form>
+        </div>
+
+        <div id="articulos-div" class=""></div>
+      </div>
+    </div>
+
+    <!-- Articulos -->
+
+    <!-- Lista de mensajes -->
+    <ul id="timeline" class="timeline oculto">
+      <!-- Mensaje -->
+      <li class="animated fadeIn fast">
+        <div class="avatar">
+          <img src="img/avatars/spiderman.jpg" />
+        </div>
+        <div class="bubble-container">
+          <div class="bubble">
+            <h3>@spiderman</h3>
+            <br />
+            La tía May, hizo unos panqueques en forma de ironman!
+          </div>
+
+          <div class="arrow"></div>
+        </div>
+      </li>
+      <!-- Fin del mensaje -->
+    </ul>
+    <!-- Fin Lista de mensajes -->
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.0.0/dist/pouchdb.min.js"></script>
+    <script src="js/libs/jquery.js"></script>
+    <script src="js/libs/plugins/mdtoast.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/functions.js"></script>
+  </body>
+</html>
